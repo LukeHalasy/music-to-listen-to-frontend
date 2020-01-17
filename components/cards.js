@@ -24,9 +24,9 @@ const Cards = (props) => {
     return (
       <Box sx={{
         'border': '1px solid black',
-        'background': props.colors.cardbg,
+        'background': props.colors.cardBg,
         ':hover': {
-          backgroundColor: props.colors.cardhover,
+          backgroundColor: props.colors.cardHover,
           cursor: 'pointer'
         }
       }} px={20} py={2} width={1/6} key={c.title} onClick={onClick}>

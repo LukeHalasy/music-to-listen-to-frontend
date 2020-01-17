@@ -154,7 +154,7 @@ const Search = (props) => {
       }
       .search-box {
         background-color: ${props.colors.search};
-        border: 4px solid black;
+        border: 4px solid ${props.colors.searchBorder};
         border-radius: 2px;
         font-size: 2rem;
         width: 100%;
@@ -164,7 +164,7 @@ const Search = (props) => {
       .search-box:focus {
         width: 100%;
         outline: none;
-        border: 4px solid gray;
+        border: 4px solid ${props.colors.searchBorderFocus};
       }
 
       .search-btn {

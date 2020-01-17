@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import Head from 'next/head'
 import Cards from '../components/cards'
 import axios from 'axios'
@@ -15,7 +15,7 @@ const colors = {
   searchBorderFocus: '#4c3163'
 }
 
-const Home = (props) => {
+const Listened = (props) => {
   const [albums, setAlbums] = useState(props.albums);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -63,8 +63,8 @@ const Home = (props) => {
       </Head>
 
       <div className="page">
-        <Link href="/listened">
-          <a>Listened</a>
+        <Link href="/">
+          <a>To Listen To</a>
         </Link>
         <Search insertAlbum={insertAlbum} colors={colors} />
         <Cards albums={albums} removeAlbum={removeAlbum} colors={colors} />
@@ -85,7 +85,7 @@ const Home = (props) => {
   )
 }
 
-Home.getInitialProps = async function({ req }) {
+Listened.getInitialProps = async function({ req }) {
   const res = await axios.get(`${CONFIG.SERVER_URL}/albums`)
 
   return ({
@@ -93,4 +93,5 @@ Home.getInitialProps = async function({ req }) {
   })
 };
 
-export default Home
+
+export default Listened
