@@ -86,7 +86,7 @@ const Listened = (props) => {
 }
 
 Listened.getInitialProps = async function({ req }) {
-  const res = await axios.get(`${CONFIG.SERVER_URL}/albums`)
+  const res = await axios.get(`${CONFIG.SERVER_URL}/albums/true`)
 
   return ({
     albums: res.data

@@ -15,7 +15,7 @@ const Cards = (props) => {
     let title = text.substring(text.indexOf("-") + 2, text.length);
 
     // delete the album from the data
-    const res = await Axios.delete(`${CONFIG.SERVER_URL}/albums/${title}`);
+    const res = await Axios.put(`${CONFIG.SERVER_URL}/albums/${title}`);
 
     props.removeAlbum(title, artist);
   }

@@ -86,7 +86,7 @@ const Home = (props) => {
 }
 
 Home.getInitialProps = async function({ req }) {
-  const res = await axios.get(`${CONFIG.SERVER_URL}/albums`)
+  const res = await axios.get(`${CONFIG.SERVER_URL}/albums/false`)
 
   return ({
     albums: res.data
